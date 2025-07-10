@@ -272,10 +272,10 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 👨‍💻 Development Team
 
-- **Mohamed Ebrahim** - Lead Developer (2025)
 - **Face Recognition Module** - AI and Computer Vision
 - **Voice Assistant Module** - NLP and Speech Processing
 - **Web Interface** - Full-stack Development
+- **Embeded System** -- hardware and ESP32 to emulate home devices
 
 ## 🆘 Support
 
