@@ -17,7 +17,6 @@ project_root/
 ├── performance_log.csv           # Logs system performance (CPU, RAM)
 ├── face_recognition.log          # Main logging file
 └── last_id.txt                   # Tracks last synced user ID
-
 ```
 
 ---
