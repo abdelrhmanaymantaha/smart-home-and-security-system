@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Monitor Page</title>
+    <style>
+        body {
+            background: linear-gradient(225deg, #eee, #530736);
+            color: #333;
+            font-family: "Poppins", sans-serif;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .monitor-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 40px;
+            padding: 0 20px;
+            flex-wrap: wrap;
+        }
+
+        .room {
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px;
+            width: 320px;
+            text-align: center;
+            background: #e0e0e0;
+            border: 1px solid #d3e3e0;
+        }
+
+        .sensor-data {
+            border-radius: 8px;
+            padding: 10px;
+            width: 200px;
+            text-align: center;
+            background: #ebefef;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(189, 201, 199, 0.5);
+        }
+
+        .sensor-data p {
+            font-size: 1.1em;
+            margin: 10px 0;
+        }
+
+        .return {
+            margin-top: 20px;
+            margin-left: 10px;
+            font-weight: bolder;
+            width: 100px;
+            height: 40px;
+            background: #e0e0e0;
+            border: none;
+            color: #333;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='monitor.css') }}">
+
+</head>
+
+<body>
+    <div id="main-content">
+        <button class="return" id="return" onclick="Return()"><i class="fa-solid fa-arrow-left"></i>Return</button>
+
+        <div class="monitor-container">
+            <!-- Living Room -->
+            <div class="room">
+                <h2>Living Room</h2>
+                <div class="sensor-container">
+                    <div class="sensor-data living">
+                        <p><i class="fa-solid fa-temperature-high"></i></p>
+                        <span id="living-room-temp">0<span>°C</span></span>
+                    </div>
+                    <div class="sensor-data">
+                        <p><i class="fa-solid fa-droplet" style="color: #1053c6;"></i></p>
+                        <span id="living-room-humidity">0 <span>%</span></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kitchen -->
+            <div class="room">
+                <h2>Kitchen</h2>
+                <div class="sensor-container">
+                    <div class="sensor-data">
+                        <p><i class="fa-solid fa-temperature-high"></i></p>
+                        <span id="kitchen-temp">0 <span>°C</span></span>
+                    </div>
+                    <div class="sensor-data">
+                        <p><i class="fa-solid fa-droplet" style="color: #1053c6;"></i> </p>
+                        <span id="kitchen-humidity">0 <span>%</span></span>
+                    </div>
+                    <div class="sensor-data">
+                        <p><i class="fa-solid fa-fire" style="color: #ec5809;"></i> </p>
+                        <span id="kitchen-gas">unknown</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Garden -->
+            <div class="room">
+                <h2>Garden</h2>
+                <div class="sensor-container">
+                    <div class="sensor-data">
+                        <p><i class="fa-solid fa-temperature-high"></i></p>
+                        <span id="garden-temp">0 <span>°C</span></span>
+                    </div>
+                    <div class="sensor-data">
+                        <p><i class="fa-solid fa-droplet" style="color: #1053c6;"></i></p>
+                        <span id="garden-humidity">0 <span>%</span></span>
+                    </div>
+                    <div class="sensor-data">
+                        <p><i class="fa-solid fa-seedling" style="color: #1b9339;"></i></p>
+                        <span id="garden-soil">0 <span>%</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../static/monitor.js"></script>
+</body>
+
+</html>

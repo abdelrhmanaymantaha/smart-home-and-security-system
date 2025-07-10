@@ -1,0 +1,138 @@
+body {
+  background: linear-gradient(225deg, #eee, #530736);
+  color: #333;
+  font-family: "Poppins", sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 30px;
+  color: #444;
+  font-size: 2rem;
+}
+
+/* الحاوية الرئيسية */
+.monitor-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40px;
+  padding: 0 20px;
+  flex-wrap: wrap;
+}
+
+/* تنسيق لكل غرفة */
+.room {
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px;
+  width: 320px;
+  text-align: center;
+  transition: transform 0.3s;
+  background: #e0e0e0;
+  border: 1px solid #d3e3e0;
+}
+
+.room:hover {
+  transform: scale(1.05);
+}
+
+.sensor-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* تنسيق للبيانات داخل الغرفة */
+.sensor-data {
+  border-radius: 8px;
+  padding: 10px;
+  width: 200px;
+  text-align: center;
+  transition: 0.3s;
+  background: #ebefef;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(189, 201, 199, 0.5);
+}
+
+.sensor-data:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.sensor-data p {
+  font-size: 1.1em;
+  margin: 10px 0;
+}
+
+/* ألوان للحالة */
+#garden-soil {
+  font-weight: bold;
+}
+
+span {
+  font-weight: bold;
+}
+
+.living {
+  margin-bottom: 40px;
+}
+
+.return {
+  margin-top: 20px;
+  margin-left: 10px;
+  font-weight: bolder;
+  width: 100px;
+  height: 40px;
+  background: #e0e0e0;
+  border: none;
+  color: #333;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.return:hover {
+  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1),
+    inset -5px -5px 10px rgba(255, 255, 255, 0.5);
+  color: #530736;
+}
+
+.fa-arrow-left {
+  padding-right: 5px;
+}
+
+/* تحسين العرض على الشاشات الصغيرة */
+@media (max-width: 600px) {
+  .monitor-container {
+    align-items: center;
+    padding: 0 10px;
+  }
+
+  .room {
+    width: 90%;
+    height: fit-content;
+  }
+
+  .sensor-data {
+    width: 90%;
+  }
+  .return {
+    width: 30%;
+  }
+}
+
+@media (max-width: 480px) {
+  .sensor-data p {
+    font-size: 1em;
+  }
+}

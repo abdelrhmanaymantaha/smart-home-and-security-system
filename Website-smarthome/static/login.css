@@ -1,0 +1,132 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: "Arial", sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #7f00ff, #e100ff);
+}
+/* Container split layout */
+.container {
+  display: flex;
+  width: 90%;
+  max-width: 1000px;
+  height: 600px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Left welcome section */
+.welcome-section {
+  flex: 1;
+  background: linear-gradient(135deg, #7f00ff, #e100ff);
+  color: white;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.welcome-section h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.welcome-section p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Right login section */
+.login-section {
+  flex: 1;
+  background-color: #fff;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.login-section h2 {
+  font-size: 24px;
+  color: #7e0f6b;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+form {
+  width: 100%;
+}
+
+form input {
+  width: 80%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  font-size: 16px;
+  margin-left: 10%;
+}
+.ree {
+  margin-top: 20px;
+  text-align: center;
+}
+
+form input:focus {
+  border-color: #7f00ff;
+  outline: none;
+}
+/* Remember and forgot password */
+
+/* Button Styling */
+button[type="submit"] {
+  width: 30%;
+  padding: 12px;
+  background: linear-gradient(90deg, #7f00ff, #e100ff);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  display: block;
+  margin: 0 auto;
+}
+
+button[type="submit"]:hover {
+  background: linear-gradient(90deg, #6a00cc, #cc00cc);
+}
+
+/* Error message styling */
+.error {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 10px;
+  display: none;
+  text-align: center;
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .welcome-section,
+  .login-section {
+    flex: unset;
+    width: 100%;
+    padding: 40px 20px;
+  }
+
+  .welcome-section h1 {
+    font-size: 28px;
+  }
+}

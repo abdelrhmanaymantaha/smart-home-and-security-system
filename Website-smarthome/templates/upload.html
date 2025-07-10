@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Upload Portal</title>
+    <style>
+        body {
+            background-color: #f6eef7;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #7e0f6b;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            color: #7e0f6b;
+            margin-bottom: 20px;
+        }
+
+        form {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 8px;
+            color: #7e0f6b;
+        }
+
+        input[type="text"],
+        input[type="file"] {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #7f00ff;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        button {
+            background-color: #7e0f6b;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .return {
+            margin: 20px;
+            padding: 8px 16px;
+            height: 40px;
+            background: #e0e0e0;
+            border: none;
+            color: #333;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='upload.css') }}">
+</head>
+
+<body>
+    <div id="main-content">
+        <button class="return" id="return" onclick="Return()"><i class="fa-solid fa-arrow-left"></i>Return</button>
+        <div class="container">
+            <h2>Upload Your Images</h2>
+
+            <!-- Upload Form -->
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <label for="username"><i class="fa-solid fa-user"></i> Username:</label>
+                <input type="text" name="username" id="username" required>
+
+                <label for="images"><i class="fa-solid fa-images"></i> Select 3 Images:</label>
+                <input type="file" name="images" multiple required>
+
+                <button type="submit"><i class="fa-solid fa-upload"></i> Upload Images</button>
+            </form>
+
+            <!-- Divider -->
+            <hr style="margin: 40px 0; border: none; height: 1px; background: #ddd;">
+
+            <!-- Gallery Form -->
+            <h2>View Your Gallery</h2>
+            <form action="/gallery/" method="get" onsubmit="goToGallery(event)">
+                <label for="gallery_username"><i class="fa-solid fa-eye"></i> Username:</label>
+                <input type="text" id="gallery_username" required>
+                <button type="submit"><i class="fa-solid fa-image"></i> View Images</button>
+            </form>
+        </div>
+    </div>
+    <script src="../static/upload.js"></script>
+</body>
+
+</html>
